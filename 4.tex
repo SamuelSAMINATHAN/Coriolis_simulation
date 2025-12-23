@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{La Force de Coriolis}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+La force de Coriolis est une force fictive qui apparaît dans un référentiel en rotation. Elle explique de nombreux phénomènes physiques, notamment la déviation des corps en mouvement sur Terre. Ce rapport explore deux aspects :
+\begin{itemize}
+    \item La simulation de la déviation vers l'Est d'un corps en chute libre en fonction de la latitude et de l'altitude.
+    \item L'analyse de l'expérience historique de Camille Flammarion depuis le sommet du Panthéon.
+\end{itemize}
+
+\section{Simulation 1 : Déviation vers l'Est}
+\subsection{Principe}
+Lorsqu'un objet tombe, il conserve sa vitesse latérale initiale. En raison de la rotation de la Terre, cette vitesse est plus grande en haut d'une tour qu'à sa base. Ainsi, l'objet "dépasse" le sol vers l'Est.
+
+\subsection{Analyse des paramètres}
+\begin{itemize}
+    \item \textbf{Latitude} : La déviation est maximale à l'Équateur ($0^\circ$) et nulle aux pôles ($90^\circ$).
+    \item \textbf{Altitude} : Plus l'altitude est élevée, plus la déviation est importante.
+\end{itemize}
+
+\subsection{Résultat}
+La figure \ref{fig:globe} montre un globe terrestre interactif où l'utilisateur peut sélectionner un point et entrer une altitude pour visualiser la trajectoire déviée.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/earth_texture.jpg}
+    \caption{Globe terrestre avec trajectoire simulée.}
+    \label{fig:globe}
+\end{figure}
+
+\section{Simulation 2 : L'expérience de Camille Flammarion}
+\subsection{Contexte historique}
+En 1903, Camille Flammarion a mené une expérience depuis le sommet du Panthéon à Paris ($H \approx 67$ m). Il a observé la déviation vers l'Est de billes en chute libre.
+
+\subsection{Prédiction théorique}
+La déviation $d$ est donnée par la formule :
+\begin{equation}
+    d = \frac{2}{3} \Omega \cdot \cos(\phi) \cdot \sqrt{\frac{2H^3}{g}}
+\end{equation}
+avec :
+\begin{itemize}
+    \item $\Omega$ : vitesse angulaire de la Terre ($7.292 \times 10^{-5}$ rad/s),
+    \item $\phi$ : latitude ($48.8^\circ$ pour Paris),
+    \item $H$ : hauteur de chute (67 m),
+    \item $g$ : accélération gravitationnelle ($9.81$ m/s$^2$).
+\end{itemize}
+
+Pour $H = 67$ m, la déviation théorique est de $8.10$ mm.
+
+\subsection{Incertitudes}
+\begin{itemize}
+    \item \textbf{Valeurs mesurées} : Les erreurs proviennent des courants d'air, de l'imprécision du lâcher et des vibrations.
+    \item \textbf{Valeurs théoriques} : Les incertitudes incluent la précision de $g$, l'arrondi de $\phi$, et la négligence de la résistance de l'air.
+\end{itemize}
+
+\section{Comparaison et Conclusion}
+La simulation confirme les résultats de l'expérience de Flammarion. Bien que la force de Coriolis soit faible sur une chute de 67 m, elle joue un rôle majeur à l'échelle atmosphérique et climatique.
+
+\end{document}
