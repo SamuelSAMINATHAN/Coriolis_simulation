@@ -4,7 +4,26 @@ Modélisation interactive de la déviation vers l'Est d'un objet en chute libre 
 
 ## Installation
 
-Prérequis: Python 3.11+
+### 1. Installer UV
+
+UV est un gestionnaire de paquets et d'environnements Python rapide. Il gère automatiquement Python et les dépendances.
+
+**Windows (PowerShell en mode administrateur):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**macOS/Linux:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Vérifiez l'installation :
+```bash
+uv --version
+```
+
+### 2. Générer l'exécutable
 
 **Windows:** Double-cliquez sur `run-app.bat`
 
@@ -14,12 +33,23 @@ chmod +x run-app.sh
 ./run-app.sh
 ```
 
-Ou installation manuelle:
+Ces scripts :
+- Vérifient que UV est installé
+- Synchronisent l'environnement virtuel avec les dépendances
+- Génèrent l'exécutable `main.exe` (Windows) ou `main` (macOS/Linux) dans le dossier `dist/`
+
+### 3. Lancer l'application
+
+Une fois l'exécutable généré, lancez-le directement :
+- **Windows:** Double-cliquez sur `dist\main.exe`
+- **macOS/Linux:** `./dist/main`
+
+### Installation manuelle (alternative)
+
+Si vous préférez installer manuellement :
 ```bash
-python -m venv venv
-source venv/bin/activate  # ou: venv\Scripts\activate sur Windows
-pip install -r requirements.txt
-python main.py
+uv sync
+uv run python main.py
 ```
 
 ## À propos
