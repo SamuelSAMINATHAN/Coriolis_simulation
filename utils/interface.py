@@ -8,6 +8,7 @@ except Exception as e:
     QtInteractor = None
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
+import os
 
 class CoriolisInterface(QtWidgets.QWidget):
     def __init__(self, parent=None):
@@ -140,8 +141,13 @@ class CoriolisInterface(QtWidgets.QWidget):
             # -----------------------------
             
             try:
-                # Chargement de la texture
-                tex = pv.read_texture(examples.mapfile) if hasattr(examples, "mapfile") else None
+                # Get the texture path
+                if getattr(sys, 'frozen', False):
+                    base_path = sys._MEIPASS
+                else:
+                    base_path = os.path.dirname(os.path.dirname(__file__))
+                texture_path = os.path.join(base_path, "assets", "earth_texture.jpg")
+                tex = pv.read_texture(texture_path)
                 # Ajout du maillage texturé au traceur
                 # smooth_shading=True adoucit les facettes
                 globe_plotter.add_mesh(earth_mesh, texture=tex, smooth_shading=True)
