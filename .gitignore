@@ -1,0 +1,51 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environments
+.venv/
+.venv
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+*.spec
+build/
+dist/
+*.manifest
+
+# Compiled extensions
+*.so
+*.dll
+
+# Test/Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Matplotlib
+*.png
+*.pdf
+
+# Temporary files
+*.tmp
+*.log
+temp/
+
+# uv
+.python-version
+

@@ -1,0 +1,7 @@
+# Dépendances du Simulateur de Force de Coriolis
+
+# Core physics & numerics
+numpy>=2.0
+pyvista>=0.40
+PyQt5>=5.15
+matplotlib>=3.10
